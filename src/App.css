@@ -4,20 +4,26 @@
   padding: 2rem;
   text-align: center;
 }
+
 .markdown-wrapper {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 800px;
+  gap: 20px;
 }
 
 .editor-wrapper {
-  max-width: 600px;
+  width: 70%;
 }
 .preview-wrapper {
-  max-width: 800px;
+  width: 90%;
 }
 .editor-wrapper,
 .preview-wrapper {
   border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 20px auto;
@@ -28,12 +34,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(145, 38, 38);
+  background-color: rgb(8, 123, 79);
   padding: 10px;
+  height: 30px;
 }
 
 .hide-cross {
   cursor: pointer;
+}
+
+.editor-box {
+  background-color: rgb(184, 243, 202);
+  height: 150px;
+  resize: vertical;
+}
+
+.preview {
+  background-color: rgb(184, 243, 202);
+  color: black;
+  padding: 10px;
+  text-align: justify;
 }
 
 .hide {

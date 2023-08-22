@@ -1,12 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { togglePreview } from "../redux/windowsSlice";
+import { updateInput } from "../redux/inputSlice";
 
 const MarkdownInput = () => {
-  const text =
-    "# Welcome to my React Markdown Previewer! ## This is a sub-heading...";
   const dispatch = useDispatch();
   const global = useSelector((state) => state.windows);
   const mdInput = useSelector((state) => state.input);
+  const handleInputChange = (event) => {
+    const newInput = event.target.value;
+
+    dispatch(updateInput(newInput));
+  };
 
   return (
     <section
@@ -23,8 +27,9 @@ const MarkdownInput = () => {
       <textarea
         id="editor"
         className="editor-box"
-        defaultValue={mdInput.markdown}
-      ></textarea>
+        value={mdInput.markdown}
+        onChange={handleInputChange}
+      />
     </section>
   );
 };

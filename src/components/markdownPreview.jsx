@@ -4,7 +4,7 @@ import { toggleInput } from "../redux/windowsSlice";
 const MarkdownPreview = () => {
   const dispatch = useDispatch();
   const global = useSelector((state) => state.windows);
-  const md = useSelector((state) => state.preview);
+  const md = useSelector((state) => state.input);
 
   return (
     <section
