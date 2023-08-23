@@ -59,3 +59,7 @@
 .hide {
   display: none;
 }
+code,
+pre {
+  background-color: aliceblue;
+}
