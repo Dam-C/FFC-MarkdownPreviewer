@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleInput } from "../redux/windowsSlice";
+import ReactMarkdown from "react-markdown";
 
 const MarkdownPreview = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const MarkdownPreview = () => {
           X
         </i>
       </div>
-      <div className="preview">{md.markdown}</div>
+      <ReactMarkdown className="preview">{md.markdown}</ReactMarkdown>
     </section>
   );
 };
