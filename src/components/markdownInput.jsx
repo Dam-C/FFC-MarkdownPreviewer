@@ -27,8 +27,8 @@ const MarkdownInput = () => {
       <textarea
         id="editor"
         className="editor-box"
-        value={mdInput.markdown}
         onChange={handleInputChange}
+        value={mdInput.markdown}
       />
     </section>
   );

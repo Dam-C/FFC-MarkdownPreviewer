@@ -1,11 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleInput } from "../redux/windowsSlice";
-import ReactMarkdown from "react-markdown";
+import { marked } from "marked";
 
 const MarkdownPreview = () => {
   const dispatch = useDispatch();
   const global = useSelector((state) => state.windows);
-  const md = useSelector((state) => state.input);
+
+  marked.use({
+    breaks: true,
+  });
+
+  const md = marked.parse(useSelector((state) => state.input.markdown));
+
+  const getHtmlContent = () => {
+    return { __html: marked.parse(md) };
+  };
 
   return (
     <section
@@ -19,7 +28,7 @@ const MarkdownPreview = () => {
           X
         </i>
       </div>
-      <ReactMarkdown className="preview">{md.markdown}</ReactMarkdown>
+      <div id="preview" dangerouslySetInnerHTML={getHtmlContent()} />
     </section>
   );
 };
