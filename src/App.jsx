@@ -6,6 +6,7 @@ const App = () => {
     <main className="markdown-wrapper">
       <MarkdownInput />
       <MarkdownPreview />
+      <h4 className="creator">by Damien Charlois</h4>
     </main>
   );
 };

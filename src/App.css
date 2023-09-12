@@ -1,3 +1,11 @@
+:root {
+  --primary: rgb(154, 59, 59);
+  --secondary: rgb(192, 130, 97);
+  --ternary: rgb(226, 199, 153);
+  --quadruary: rgb(242, 236, 190);
+  background-color: var(--secondary);
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -20,8 +28,7 @@
 }
 .editor-wrapper,
 .preview-wrapper {
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 10px solid var(--primary);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -33,7 +40,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(8, 123, 79);
+  font-family: "Press Start 2P", cursive;
+  background-color: var(--primary);
   padding: 10px;
   height: 30px;
 }
@@ -43,13 +51,14 @@
 }
 
 .editor-box {
-  background-color: rgb(184, 243, 202);
+  background-color: var(--ternary);
   height: 150px;
   resize: vertical;
+  padding: 10px;
 }
 
 #preview {
-  background-color: rgb(184, 243, 202);
+  background-color: var(--ternary);
   color: black;
   padding: 10px;
   text-align: justify;
@@ -61,5 +70,9 @@
 }
 code,
 pre {
-  background-color: aliceblue;
+  background-color: var(--quadruary);
+}
+
+.creator {
+  font-family: "Press Start 2P", cursive;
 }
